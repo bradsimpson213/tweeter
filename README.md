@@ -24,7 +24,7 @@ There is also a solution folder with a folder for each phase, so once you comple
 Lets get that flask server up and running!
 
 
-1. The starter already has `flask` and `python-dotenv` dependancie in its pipfile, so we just need to run `pipenv install` to get those dependancies installed and our `.venv` folder created 👍🏼
+1. The starter already has `flask` and `python-dotenv` dependancie in its pipfile, so we just need to run `pipenv install` to get those dependancies installed and our `.venv` folder created 👍🏼.  **REMINDER!  You want to cd into the starter folder before doing any installs, and then create all new files in the starter folder**
 
 
 2. Next let's make our 2 environment files, a `.flaskenv` file to hold our public environmental variables like FLASK_APP and FlASK_DEBUG and then a `.env` file to hold our sensitive environmental variables like our SECRET_KEY (and eventually our DATABASE_URL).   
