@@ -47,7 +47,7 @@ When you have completed this phase, you should be able to start up your flask se
 Now that we have a server up and running, let's make some routes!
 
 
-1. Lets start by making a home or index route!  This route should have the URL path of `'/'`and should randomly pick a tweet from the `tweets` dictionary in the `tweets.py` file.  Once a random tweet has been selected, we want to render a template using the already created `index.html` template in the `templates` folder (remember to send the tweet along to the template).  You should see output in the browser like the following if all is done correcty (might see a different tweet as that part is random)  
+1. Lets start by making a home or index route!  This route should have the URL path of `'/'`and should randomly pick a tweet from the `tweets` dictionary in the `tweets.py` file. (might want to check out the random module if your don't remember the method to use)  Once a random tweet has been selected, we want to render a template using the already created `index.html` template in the `templates` folder (remember to send the tweet along to the template).  You should see output in the browser like the following if all is done correcty (might see a different tweet as that part is random)  
 ![Index Route](./screen-shots/phase2-1.png)
 Note how we did not need to install `Jinja2` at all, since it is a dependancy of flask!
 
@@ -62,7 +62,7 @@ Note how we did not need to install `Jinja2` at all, since it is a dependancy of
 
     b. The `feed.html` template is going to need some work, lets start of by having it inherit from the `base.html` template, like we did for our home route.  Now at least it should look pretty!  
 
-    c. We are not just sending a single tweet like we did on the home route, we are sending a whole list, so we will need to iterate through the list in the template.  What we want displayed in each tweet can be the same as our home page, so it should look like this:
+    c. We are not just sending a single tweet like we did on the home route, we are sending a whole list, so we will need to iterate through the list in the template.  What we want displayed in each tweet can be the same as our home page, so it should look like this (the below code snippet is how you should display a single tweet, but you will need to add the code to iterate through all the tweets):
 
     ```html
         <div class="tweet">
@@ -91,7 +91,7 @@ So now we get a random tweet on our home page, and our feed is filled with great
 
 2. We will want to make a `form` folder, and then in that folder a `form.py` file to store our tweet form. Create a Tweet form class and form fields for author, tweet, and a submit button.  The author and tweet fields should both be strings and be required.  Label the submit button "Create Tweet".  Reminder that forms need several imports 👍🏼
 
-3. Now lets start working on a route for this form!  We will want to start with the GET route for a URL path of `'/new'` and we will certainly need to import our new form, so we can instantiate it insite our route.  We will also want to create a new html template for our form called `'new_tweet.html'`, but before we jump to that, make sure to render the new template, and to pass form to that template.
+3. Now lets start working on a route for this form!  We will want to start with the GET route for a URL path of `'/new'` and we will certainly need to import our new form, so we can instantiate it inside our route.  We will also want to create a new html template for our form called `'new_tweet.html'`, but before we jump to that, make sure to render the new template, and to pass form to that template.
 
 4. The `'new_tweet.html'` form should inherit from `'base.html'` so it will get some CSS.  Some sort of header would be nice on this page.  You can set up the form fields anyway you like, `div`'s or `p` tags are usually prefered.  Don't forget your CSRF protection!  If you give the `form` tag a `class="tweet"` attribute, it will look a whole lot nicer in the browser!  
 
