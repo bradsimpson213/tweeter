@@ -4,6 +4,20 @@
 
 Lets find out!  Today we will be making a `Twitter` like clone to practice creating routes, templates, and forms with `Flask`, `Jinja`, and `WTForms`!
 
+There is a starter for this project, which has the following:
+
+1. Pipfile with a few dependancies in it
+
+2. Templates folder with a few Jinja templates
+
+3. Static folder with some CSS
+
+4. `tweets.py` which has some tweet data
+
+
+There is also a solution folder with a folder for each phase, so once you complete a phase you can check your code versus the solution.  Please do not look at the solution until you have completed the corresponding phase 🙏🏼
+
+
 
 ## PHASE 1 - FLASK Setup
 
@@ -22,6 +36,7 @@ Lets get that flask server up and running!
 4. Last step for this phase!  Time to create a _init__.py in our app folder to house the instance of our flask app.  We want to import our `Config` class we just made, as well as flask, and then we will want to create an instance of Flask.  We will also want to configure our Flask instance with the `Config` class we imported.
 
 
+
 When you have completed this phase, you should be able to start up your flask server successfully using `pipenv run flask run` and provide an additional `-p 5001` if you need to start it on a port other than the default of 5000.  If you navigate to the app in the browser you will see a "Not Found" error, as we have not made any routes yet!
 
 
@@ -33,12 +48,12 @@ Now that we have a server up and running, let's make some routes!
 
 
 1. Lets start by making a home or index route!  This route should have the URL path of `'/'`and should randomly pick a tweet from the `tweets` dictionary in the `tweets.py` file.  Once a random tweet has been selected, we want to render a template using the already created `index.html` template in the `templates` folder (remember to send the tweet along to the template).  You should see output in the browser like the following if all is done correcty (might see a different tweet as that part is random)  
-![Index Route](../screen-shots/phase2-1.png)
+![Index Route](./screen-shots/phase2-1.png)
 Note how we did not need to install `Jinja2` at all, since it is a dependancy of flask!
 
 
 2. So our index route works, but wow is it in need of some styling, and maybe navigation?  Luckily, there is a `base.html` in our templates folder that has a nav bar and is already linked to a stylesheet!  All we need to do is set up our `index.html` to inherit from the `base.html`, and we will be looking at some pretty colors!  Check out the browser and our home route should look like the following if all is done correcty (again might see a different tweet as that part is random) 
-![Index Route Styled](../screen-shots/phase2-2.png)
+![Index Route Styled](./screen-shots/phase2-2.png)
 
 
 3. A random tweet is nice and all for a home page, but we want more of a feed that is going to display all the tweets we have, so lets start on that route!     
@@ -63,7 +78,7 @@ Note how we did not need to install `Jinja2` at all, since it is a dependancy of
 
 
     If everything was done right, you should be able to see something like this in your browser:
-    ![Feed Route](../screen-shots/phase2-3.png)
+    ![Feed Route](./screen-shots/phase2-3.png)
 
 
 ## Phase 3 - Setting up a form class
@@ -82,7 +97,7 @@ So now we get a random tweet on our home page, and our feed is filled with great
 
 
 If you take a peek in the browser, your new form should look something like this, depending on how you set up the fields.  If you try to submit the form, nothing should happen because we still need to set up the post route!
-![Form Route](../screen-shots/phase3.png)
+![Form Route](./screen-shots/phase3.png)
 
 
 ## PHASE 4 - Make some tweets!
@@ -90,8 +105,11 @@ If you take a peek in the browser, your new form should look something like this
 The finish line is in sight!  We just need to save the posts from our form!
 
 1. Lets get back to the `'/new'` route and add in some POST functionality!  Make sure to set up conditional logic for your `form.validate_on_submit()` and `form.errors`.  
+
     a. As far as creating a new tweet, your `id` can be the length of the tweets list.  The `author` and `tweet` fields need to be populated from the form data.  The `date` can just be generated at the time of the post (check out the datetime module, it should just be the date, no need for times). Lastly the `likes` attribute should be set to 0 or you can randomly generate a value for it.  Make sure to add that new tweet to the list of tweets when you are done!
+
     b. If we successfully made a new tweet, we should redirect the user to the `feed` page so they can see their new tweet!
+    
     c. If for some reason we had errors on the form submission, we should return those to the browser.
 
 
