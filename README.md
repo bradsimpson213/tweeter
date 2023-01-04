@@ -106,7 +106,7 @@ The finish line is in sight!  We just need to save the posts from our form!
 
 1. Lets get back to the `'/new'` route and add in some POST functionality!  Make sure to set up conditional logic for your `form.validate_on_submit()` and `form.errors`.  
 
-    a. As far as creating a new tweet, your `id` can be the length of the tweets list.  The `author` and `tweet` fields need to be populated from the form data.  The `date` can just be generated at the time of the post (check out the datetime module, it should just be the date, no need for times). Lastly the `likes` attribute should be set to 0 or you can randomly generate a value for it.  Make sure to add that new tweet to the list of tweets when you are done!
+    a. As far as creating a new tweet, your `id` can be the length of the tweets list.  The `author` and `tweet` fields need to be populated from the form data.  The `date` can just be generated at the time of the post (check out the datetime module, it should just be the date, no need for times). Lastly the `likes` attribute should be set to 0 or you can randomly generate a value for it. (the templates do divide likes by 1,000 and add a 'k' afterwards, Mr Musk has a decent amount of followers...)  Make sure to add that new tweet to the list of tweets when you are done!
 
     b. If we successfully made a new tweet, we should redirect the user to the `feed` page so they can see their new tweet!
     
