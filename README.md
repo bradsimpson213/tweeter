@@ -33,7 +33,7 @@ Lets get that flask server up and running!
 3. Next let's set up our `config.py` to store all of our environmental variables imports (it should go in the `app` folder).  It should be a `Config` class with the SECRET_KEY being set as a class attribute (HINT: will need to import os and use that module to get the necessary environmental variables)
 
 
-4. Last step for this phase!  Time to create a _init__.py in our app folder to house the instance of our flask app.  We want to import our `Config` class we just made, as well as flask, and then we will want to create an instance of Flask.  We will also want to configure our Flask instance with the `Config` class we imported.
+4. Last step for this phase!  Time to create a __init__.py in our app folder to house the instance of our flask app.  We want to import our `Config` class we just made, as well as flask, and then we will want to create an instance of Flask.  We will also want to configure our Flask instance with the `Config` class we imported.
 
 
 
